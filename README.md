@@ -7,18 +7,22 @@
 
 ### 1.1 前期准备
 
-- `robots.txt`
- - 建议爬虫的规范
-- `sitemap.xml`
- - 检查网站地图，其中定义了网站的所以链接地址
-- 估算网站大小
- - 通过估算得到的数量来确定使用何种爬虫技术
- - 通过浏览器的`site`参数估算网站的链接地址个数
- - `site:example.webscraping.com/view`
-- 识别网站所用的技术
- - 通过`pip`安装第三方扩展`builtwith`来查询，`builtwith.parse('url')`
-- 寻找网站所有者
- - 通过`pip`安装第三方扩展`python-whois`来查询，`whois.whois('url')`
+`robots.txt`
+- 建议爬虫的规范
+
+`sitemap.xml`
+- 检查网站地图，其中定义了网站的所以链接地址
+
+估算网站大小
+- 通过估算得到的数量来确定使用何种爬虫技术
+- 通过浏览器的`site`参数估算网站的链接地址个数
+- `site:example.webscraping.com/view`
+
+识别网站所用的技术
+- 通过`pip`安装第三方扩展`builtwith`来查询，`builtwith.parse('url')`
+
+寻找网站所有者
+- 通过`pip`安装第三方扩展`python-whois`来查询，`whois.whois('url')`
 
 
 ### 1.2 三种爬取方式
@@ -30,12 +34,15 @@
 
 ### 1.3 高级特性
 
-- **(1)** 解析`robots.txt`
- - `robotparser`模块中的`can_fetch`进行判断
-- **(2)** 支持代理
- - `urllib2`模块
- - `requests`模块
-- **(3)** 下载限速
- - 时间戳记录访问时间，`time.sleep`进行限速
-- **(4)** 避免爬虫陷阱
- - 记录深度，访问到当前网页经过了多少个链接
+**(1)** 解析`robots.txt`
+- `robotparser`模块中的`can_fetch`进行判断
+
+**(2)** 支持代理
+- `urllib2`模块
+- `requests`模块
+
+**(3)** 下载限速
+- 时间戳记录访问时间，`time.sleep`进行限速
+
+**(4)** 避免爬虫陷阱
+- 记录深度，访问到当前网页经过了多少个链接
