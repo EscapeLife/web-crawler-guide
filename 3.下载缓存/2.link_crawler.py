@@ -38,6 +38,8 @@ def get_links(html):
 
 def link_crawler(seed_url, link_regex=None, delay=5, max_depth=-1, max_urls=-1, user_agent='wswp', proxies=None,
                  num_retries=1, scrape_callback=None, cache=None):
+    """链接爬虫添加缓存判断
+    """
     crawl_quene = [seed_url]
     seen = {seed_url: 0}
     num_urls = 0
