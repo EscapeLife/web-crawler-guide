@@ -127,3 +127,14 @@ $ mongod -dbpath .
 >>> from pymongo import MongoClient
 >>> client = MongoClient('localhost', 27017)
 ```
+
+
+## 4. 并发下载
+
+### 4.1 获取`URLS`链接地址
+
+### 4.2 串行爬虫
+
+### 4.3 多线程爬虫
+
+### 4.4 多进程和多线程爬虫
