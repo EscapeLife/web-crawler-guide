@@ -381,3 +381,116 @@ $ mongod -dbpath .
 
 - 第一种是**分析表单**，然后手工生成期望的 `POST` 请求
 - 第二种是直接使用高级模块 `Mechanize`
+
+
+## 7. 验证码处理
+
+> **验证码**(`APTCHA`)的全称为全自动区分计算机和人类的公开图灵测试，验证码用于测试用户是**否为真实人类**，比如许多银行网站强制每次登录时都需要输入验证码。
+
+**自动化处理验证码**
+
+- 首先使用光学字符识别`OCR`，将图片转化
+- 然后使用一个验证码处理`API`，识别出验证码
+
+**处理验证码的方法**
+
+- 首先是使用`OCR`，然后是使用外部`API`。对于简单的验证码，或者需要处理大量验证码时，在`OCR`方法上花费时间是很值得的。否则，使用验证码处理`API`会更加经济有效。
+
+-------------------
+
+### 7.1 注册账号
+
+> 在进行**账户注册**的时候，我们需要**填写表单**信息，并且需要识别验证码才能完成注册。要想完成**自动化注册**的功能，就需要让代码帮助我们**识别**网站的**验证码**。
+
+- 因为每次加载表单时都会显示不同的验证码图像，所以为了了解表单需要哪些参数，我们可以复用上一章编写的 `parse form` 函数。
+
+```python
+#!/usr/bin/env python
+# coding:utf-8
+
+import pprint
+import urllib2
+import cookielib
+import lxml.html
+
+register_url = 'http://example.webscraping.com/places/default/user/register'
+
+
+def parse_form(html):
+    """从表单中找到所有的隐匿的input变量属性
+    """
+    tree = lxml.html.fromstring(html)
+    data = {}
+    for e in tree.cssselect('form input'):
+        if e.get('name'):
+            data[e.get('name')] = e.get('value')
+    return data
+
+
+def register_args():
+    """获取提交表单的所以参数
+    """
+    cj = cookielib.CookieJar()
+    opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
+    html = opener.open(register_url).read()
+    form = parse_form(html)
+    pprint.pprint(form)
+
+
+if __name__ == '__main__':
+    register_args()
+```
+
+- `recaptcha_response_field`是我们需要填写获取的验证码
+- 其他的信息需要我们在注册的时候根据实际需求制定填写进去
+
+```bash
+{'_formkey': '799a82bf-4366-4b14-ba24-4e4800baa7ee',
+ '_formname': 'register',
+ '_next': '/places/default/index',
+ 'email': '',
+ 'first_name': '',
+ 'last_name': '',
+ 'password': '',
+ 'password_two': '',
+ 'recaptcha_response_field': None}
+```
+
+- 分析验证码图片之后，发现图片数据是**嵌入在网页中**的，而不是从其他的`URL`中加载过来的，所以我们使用**专门处理图片**的第三方库`Pillow`/`PIL`。
+
+- 我们发现**图像数据**的**前缀**定义了**数据类型**，并且这是一张进行了 `Base64`编码的`PNG`图像，这种格式会使用`ASCII`编码表示**二进制数据**。
+
+```html
+<img src="data:image/png;base64,iVBO0...Ergg==&#10;">
+```
+
+- 我们可以通过在第一个逗号处分割的方法**移除该前缀**。然后，使用 `Base64` 解码图像数据，回到最初的**二进制格式** 。
+
+- 要想加载图像，`PIL`需要一个类似文件的接口，所以在传给 `Image` 类之前，我们又使用了 `Bytes IO` 对这个二进制数据进行了**封装**。
+
+
+-------------------
+
+### 7.2 光学字符识别
+
+- 最基本的方式
+ - `image = Image.open("filename")`
+- 类文件读取
+ - `fp = open("filename", "rb"); im = Image.open(fp)`
+- 字符串数据读取
+ - `image = Image.open(StringIO.StringIO(buffer))`
+
+
+-------------------
+
+### 7.3 进一步改善
+
+> 要想进一步改善验证码`OCR`的性能，下面还有些可能会使用到的方法。
+
+- 实验不同阙值
+- 腐蚀阙值文本，突出字符形状
+- 调整图像大小（有时增大只寸会起到作用）
+- 根据验证码字体训练`OCR`工具
+- 限制结果为字典单词
+
+
