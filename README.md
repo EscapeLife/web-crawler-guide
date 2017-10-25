@@ -494,3 +494,363 @@ if __name__ == '__main__':
 - 限制结果为字典单词
 
 
+## 8. Scrapy爬虫
+
+### 8.1 Scrapy
+
+#### 8.1.1 安装
+
+- 安装`Scrapy`
+
+```bash
+$ pip install Scrapy
+```
+
+- 命令参数介绍
+
+```bash
+Usage:
+  scrapy <command> [options] [args]
+
+Available commands:
+  startproject  创建新项目
+  genspider    根据模板生成一个新的爬虫
+  crawl        执行爬虫
+  shell        启动交互式抓取控制台
+  bench        快速运行基准测试
+  fetch        获取一个URL使用Scrapy下载
+  runspider    运行一个独立的爬虫(没有创建一个项目)
+  settings      获取设置值
+  version      打印Scrapy版本
+  view          通过Scrapy在浏览器打开网址
+```
+
+-------------------
+
+#### 8.1.2 启动项目
+
+- 新建爬虫项目
+
+```bash
+$ scrapy startproject example
+```
+
+- 目录结构
+
+```bash
+$ tree example
+example
+├── example                # 项目名
+│  ├── __init__.py
+│  ├── items.py          # 定义了带抓区域的模型
+│  ├── middlewares.py    # 
+│  ├── pipelines.py      # 处理需要抓取的域
+│  ├── settings.py        # 定义一些设置，如用户代理、抓取延时等
+│  └── spiders            # 目录存储实际的爬虫代码
+│      └── __init__.py
+└── scrapy.cfg              # 项目配置
+```
+
+- `items.py`
+
+```python
+# -*- coding: utf-8 -*-
+
+# 在这里定义爬虫的models需要获取的信息
+# 可以参考 http://doc.scrapy.org/en/latest/topics/items.html
+
+import scrapy
+
+
+class ExampleItem(scrapy.Item):
+    """ExampleItem类是一个模板, 需要将其中的内容替换为爬虫运行时想要存储的待抓取国家信息
+    """
+    name = scrapy.Field()
+    population = scrapy.Field()
+```
+
+-------------------
+
+#### 8.1.3 创建爬虫
+
+- 生成初始模板
+
+```python
+# genspider: 根据模板生成一个新的爬虫
+# country: 生成的爬虫文件名称
+# example.webcraping.com: 爬取的域名地址
+# crawl: 这里使用了内置的crawl模板
+
+$ cd spiders
+$ scrapy genspider country example.webcraping.com --template=crawl
+```
+
+- 生成的`country.py`
+
+```python
+# -*- coding: utf-8 -*-
+
+# name: 定义爬虫名称
+# allowed_domains: 定义可以抓取的域名列表, 没有定义表示任何域名
+# start_urls: 爬虫起始的URL列表
+# rules: 告诉爬虫需要跟踪哪些连接, 其中的callback函数用于解析下载的得到的响应
+# 可以参考 http://doc.scrapy.org/en/latest/topics/spiders.html
+
+import scrapy
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider, Rule
+
+
+class CountrySpider(CrawlSpider):
+    name = 'country'
+    allowed_domains = ['example.webcraping.com']
+    start_urls = ['http://example.webcraping.com/']
+
+    rules = (
+        Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True),
+    )
+
+    def parse_item(self, response):
+        i = {}
+        # i['domain_id'] = response.xpath('//input[@id="sid"]/@value').extract()
+        # i['name'] = response.xpath('//div[@id="name"]').extract()
+        # i['description'] = response.xpath('//div[@id="description"]').extract()
+        return i
+```
+
+-------------------
+
+#### 8.1.4 优化设置
+
+```python
+# -*- coding: utf-8 -*-
+
+# 爬虫example项目的设置文件
+#
+# 为了简单起见, 这个文件只包含设置考虑重要orcommonly使用, 你可以找到更多的设置咨询文档
+#    http://doc.scrapy.org/en/latest/topics/settings.html
+#    http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#    http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+
+BOT_NAME = 'example'
+
+SPIDER_MODULES = ['example.spiders']
+NEWSPIDER_MODULE = 'example.spiders'
+
+
+# 用户代理
+#USER_AGENT = 'example (+http://www.yourdomain.com)'
+
+# 遵循robots.txt文件的规则
+ROBOTSTXT_OBEY = True
+
+# 配置由Scrapy最大并发请求, 默认同一个域名最多16个并发下载且没有延迟
+#CONCURRENT_REQUESTS = 32
+
+# 配置请求相同的网站的延迟时间, 默认值为0
+# 更多参见 http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
+# 两次请求之间的延时
+#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
+# 下载延迟设置且只能设置一个值, 同一个域的延时或者同一个IP的延时
+#CONCURRENT_REQUESTS_PER_DOMAIN = 16
+CONCURRENT_REQUESTS_PER_DOMAIN = 1
+#CONCURRENT_REQUESTS_PER_IP = 16
+
+# 禁用cookies, 默认为允许
+#COOKIES_ENABLED = False
+
+# 禁用Telnet远程登录, 默认为允许
+#TELNETCONSOLE_ENABLED = False
+
+# 覆盖默认的请求头
+#DEFAULT_REQUEST_HEADERS = {
+#  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+#  'Accept-Language': 'en',
+#}
+
+# 启用或禁用蜘蛛中间件(middlewares)
+# 更多参见 http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+#SPIDER_MIDDLEWARES = {
+#    'example.middlewares.ExampleSpiderMiddleware': 543,
+#}
+
+# 启用或禁用下载中间件(middlewares)
+# 更多参见 http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+#DOWNLOADER_MIDDLEWARES = {
+#    'example.middlewares.MyCustomDownloaderMiddleware': 543,
+#}
+
+# 启用或禁用扩展
+# 更多参见 http://scrapy.readthedocs.org/en/latest/topics/extensions.html
+#EXTENSIONS = {
+#    'scrapy.extensions.telnet.TelnetConsole': None,
+#}
+
+# 配置item pipelines
+# 更多参见 http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+#ITEM_PIPELINES = {
+#    'example.pipelines.ExamplePipeline': 300,
+#}
+
+# 启用或禁用AutoThrottle扩展, 默认为禁用
+# 更多参见 http://doc.scrapy.org/en/latest/topics/autothrottle.html
+#AUTOTHROTTLE_ENABLED = True
+# The initial download delay
+#AUTOTHROTTLE_START_DELAY = 5
+# The maximum download delay to be set in case of high latencies
+#AUTOTHROTTLE_MAX_DELAY = 60
+# The average number of requests Scrapy should be sending in parallel to
+# each remote server
+#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
+# Enable showing throttling stats for every response received:
+#AUTOTHROTTLE_DEBUG = False
+
+# 启用和配置HTTP缓存, 默认为禁用
+# 更多参见 http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
+#HTTPCACHE_ENABLED = True
+#HTTPCACHE_EXPIRATION_SECS = 0
+#HTTPCACHE_DIR = 'httpcache'
+#HTTPCACHE_IGNORE_HTTP_CODES = []
+#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+```
+
+-------------------
+
+#### 8.1.5 测试爬虫
+
+- 测试
+
+```python
+# 执行爬虫脚本crawl
+# 指定输出信息级别LOG_LEVEL
+
+$ scrapy crawl country -s LOG_LEVEL=ERROR
+```
+
+- 修改之后在爬取
+
+```python
+rules = (
+    # follow: 表示爬取索引并跟踪其中的链接
+    # callback: 表示抓取国家页面并下载响应传给callback函数处理
+    Rule(LinkExtractor(allow=r'/index/'), callback='parse_item', follow=True),
+    Rule(LinkExtractor(allow=r'/view/'), callback='parse_item')
+)
+```
+
+```python
+# 输出日志信息、索引页和国家页都可以正确爬取并已过滤了重复链接
+# 但是发现爬虫浪费了很多资源爬取每个网页上的登录和注册表单链接
+
+$ scrapy crawl country -s LOG_LEVEL=DEBUG
+```
+
+- 过滤地址
+
+```python
+rules = (
+    # deny: 不需要处理的URL链接
+    Rule(LinkExtractor(allow=r'/index/', deny='/user/'), callback='parse_item', follow=True),
+    Rule(LinkExtractor(allow=r'/view/', deny='/user/'), callback='parse_item')
+)
+```
+
+-------------------
+
+#### 8.1.6 `Shell`命令抓取
+
+- 使用`Shell`命令抓取
+
+```python
+$ scrapy shell http://example.webscraping.com/places/default/view/Afghanistan-1
+```
+
+```python
+# 可以获取响应对象
+In [1] response.url
+In [2] response.status
+
+# 使用lxml抓取数据
+# 使用lxml选择器需要使用extract方法
+In [3] name_css ＝ 'tr#places_country__row td.w2p_fw::text' 
+In [4] response.css(name_css).extract()
+```
+
+- 完整版本`country.py`
+
+```python
+# -*- coding: utf-8 -*-
+
+from scrapy.contrib.linkextractors import LinkExtractor
+from scrapy.contrib.spiders import CrawlSpider, Rule
+
+from ..items import ExampleItem
+
+
+class CountrySpider(CrawlSpider):
+    name = 'country'
+    allowed_domains = ['example.webscraping.com']
+    start_urls = ['http://example.webscraping.com/']
+
+    rules = (
+        Rule(LinkExtractor(allow='/index/', deny='/user/'), follow=True),
+        Rule(LinkExtractor(allow='/view/', deny='/user/'), callback='parse_item')
+    )
+
+    def parse_item(self, response):
+        item = ExampleItem()
+        item['name'] = response.css('tr#places_country__row td.w2p_fw::text').extract()
+        item['population'] = response.css('tr#places_population__row td.w2p_fw::text').extract()
+        return item
+```
+
+-------------------
+
+#### 8.1.7 高级参数
+
+- 文件导出
+
+```bash
+# output: 导出的文件名称
+
+$ scrapy crawl country --output=countries.csv -s LOG_LEVEL=INFO
+```
+
+- 中断与恢复爬虫
+
+```bash
+# Scrapy内置了对暂停与恢复爬取的支持
+# 我们只需要定义用于保存爬虫当前状态目录的JOBDIR设置即可
+# 需要注意的是多个爬虫的状态需要保存在不同的目录当中
+
+# 启动
+$ scrapy crawl country -s LOG_LEVEL=DEBUG -s JOBDIR=crawls/country
+
+# 中断
+Ctrl+C
+
+# 恢复
+$ scrapy crawl country -s LOG_LEVEL=DEBUG - s JOBDIR=crawls/country
+```
+
+-------------------
+
+### 8.2 Portia
+
+> **`Portia`可视化爬虫：**是一款基于`Scrapy`开发的开源工具，该工具可以通过点击要抓取的网页部分来创建爬虫，这样就比手工创建`css`选择器的方式更加方便。
+
+- `Portia`可视化爬虫
+
+```python
+https://github.com/scrapinghub/portia
+```
+
+- 使用`scrapely`实现自动化抓取
+
+```python
+https://github.com/scrapy/scrapely
+```
+
+**详情需要看文档**
+
