@@ -67,7 +67,6 @@ scrapy-splash==0.7.2
 selenium==3.6.0
 service-identity==17.0.0
 six==1.11.0
--e git+https://github.com/scrapinghub/portia.git@6003660ff3eea13afc8accc2e6a3d1a55a625266#egg=slybot&subdirectory=slybot
 Twisted==17.9.0
 txredisapi==1.3
 tzlocal==1.4
