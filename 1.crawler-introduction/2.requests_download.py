@@ -5,7 +5,7 @@ import requests
 
 
 def download(url, user_agent='smaller crawler', proxies=None, try_nums=2):
-    print 'Downloading:', url
+    print('Downloading: {}'.format(url))
     if user_agent:
         headers = {user_agent: user_agent}
     else:
@@ -21,7 +21,7 @@ def download(url, user_agent='smaller crawler', proxies=None, try_nums=2):
             if code is not None and 500 <= code < 600:
                 html = download(url, user_agent, try_nums-1)
     except requests.HTTPError as e:
-        print 'Error', e
+        print('Error {}'.format(e))
     return html
 
 
