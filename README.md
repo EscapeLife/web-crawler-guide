@@ -10,3 +10,22 @@
 
 ![index](./images/crawler-advance-guide.png)
 
+------------------
+
+## 3. 爬虫入门
+
+> 理想情况下，使用网站提供`API`接口，不行则考虑爬虫。
+
+- **[1] 思维脑图**
+
+![introduction-crawler](./images/introduction-crawler.svg)
+
+- **[2] 核心要点**
+  - 
+
+- **[3] 代码说明**
+  - 
+
+- **[4] 注意事项**
+  - 
+
