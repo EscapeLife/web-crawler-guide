@@ -10,7 +10,7 @@
 
 ![index](./images/crawler-advance-guide.png)
 
-------------------
+
 
 ## 目录结构
 
@@ -18,7 +18,7 @@
 - [2. 基础知识]()
 - [3. 爬虫入门](https://github.com/EscapeLife/web-crawler-guide#3-%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8)
 
-------------------
+
 
 ## 1. 环境配置
 
@@ -43,7 +43,7 @@
 
 > 想要用好网络爬虫，必须要有一个良好的基础作为支持。
 
-- **[1] 思维脑图**
+### 2.1 思维脑图
 
 ![introduction-crawler](./images/introduction-crawler.png)
 
@@ -62,7 +62,7 @@
 
 > 理想情况下，使用网站提供`API`接口，不行则考虑爬虫。
 
-- **[1] 思维脑图**
+#### 3.1 思维脑图
 
 ![introduction-crawler](./images/introduction-crawler.svg)
 
