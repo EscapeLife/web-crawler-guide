@@ -45,7 +45,7 @@
 
 - **[1] 思维脑图**
 
-【图】
+![introduction-crawler](./images/introduction-crawler.png)
 
 - **[2] 核心要点**
   - xxx
