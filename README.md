@@ -1,6 +1,6 @@
 # 网络爬虫入门指南
 
-![index](./images/index.jpg)
+![index](./images/crawler-advance-guide.png)
 
 ## 1. 网络爬虫简介
 
