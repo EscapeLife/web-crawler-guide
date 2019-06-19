@@ -1,14 +1,27 @@
-# 网络爬虫指北攻略
+<p align=center>
+  <a href="https://github.com/EscapeLife/love_girlfriend.git">
+    <img src="https://escapelife-1257414824.cos.ap-shanghai.myqcloud.com/never-forget-why-you-started.gif" width="680" height="120" alt="Raspi-X" >
+  </a>
+</p>
 
-![Author](https://img.shields.io/badge/Author-Escape-blue.svg)
-![Build](https://img.shields.io/badge/Build-passing-brightgreen.svg)
-![Languages](https://img.shields.io/badge/Languages-Python3.7-green.svg)
-![License](https://img.shields.io/badge/License-MIT-orange.svg)
-![Contributions](https://img.shields.io/badge/Contributions-welcome-ff69b4.svg)
+<p align=center>
+  <b>web-crawler-guide 🕷 使用Python写网络爬虫</b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Project-love_girlfriend-green.svg?style=for-the-badge&logo=ubuntu" alt="love_girlfriend"></a>
+  <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Author-Escape-orange.svg?style=for-the-badge&logo=vim" alt="love_girlfriend"></a>
+  <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Languages-Python3.7-yellow.svg?style=for-the-badge&logo=python" alt="love_girlfriend"></a>
+  <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Contributions-Weclone-blue.svg?style=for-the-badge&logo=coffeescript" alt="love_girlfriend"></a>
+</p>
 
 > 注意: 本指北攻略的所有代码，均运行在最新的`Python3.7`版本之上。
 
-![index](./images/crawler-advance-guide.png)
+<p align=center>
+  <a href="https://github.com/EscapeLife/DotFiles.git">
+    <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/crawler-advance-guide.png" >
+  </a>
+</p>
 
 
 ## 目录结构
@@ -64,3 +77,21 @@
 
 - **[4] 注意事项**
   - xxx
+
+
+## 联系方式
+
+<p align="center">
+    <img src="https://escapelife-1257414824.cos.ap-shanghai.myqcloud.com/escape-wechat-qrcode-1.gif" width="280" height="280" alt="WX" align="left" />
+</p>
+
+- **💭 [Name] 💭**
+  - 🐠 **[`EscapeLife`](https://escapelife.github.io)** 😏
+- **💭 [Induction] 💭**
+  - 🏦 **[`Focusing P.A.I`](https://paodingai.com/)** 😂
+- **💭 [Email] 💭**
+  - 📫 **[`wenpanhappy@gmail.com`](https://escapelife.github.io)** 🤔
+- **💭 [Myblog] 💭**
+  - 🍺 **[`https://escapelife.github.io`](https://escapelife.github.io)** 😚
+- **💭 [License] 💭**
+  - 🚧 [**`Apache License, Version 2.0`**](http://www.apache.org/licenses/LICENSE-2.0.html)😝
