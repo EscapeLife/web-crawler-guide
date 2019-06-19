@@ -15,8 +15,6 @@
   <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Contributions-Weclone-blue.svg?style=for-the-badge&logo=coffeescript" alt="love_girlfriend"></a>
 </p>
 
-> 注意: 本指北攻略的所有代码，均运行在最新的`Python3.7`版本之上。
-
 <p align=center>
   <a href="https://github.com/EscapeLife/DotFiles.git">
     <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/crawler-advance-guide.png" >
