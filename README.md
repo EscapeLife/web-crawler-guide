@@ -12,7 +12,6 @@
   <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Project-web_crawler_guide-green.svg?style=for-the-badge&logo=ubuntu" alt="love_girlfriend"></a>
   <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Author-Escape-orange.svg?style=for-the-badge&logo=vim" alt="love_girlfriend"></a>
   <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Languages-Python3.7-yellow.svg?style=for-the-badge&logo=python" alt="love_girlfriend"></a>
-  <a href="https://github.com/EscapeLife/awesome-builder.git"><img src="https://img.shields.io/badge/Contributions-Weclone-blue.svg?style=for-the-badge&logo=coffeescript" alt="love_girlfriend"></a>
 </p>
 
 <p align=center>
@@ -65,10 +64,17 @@
 
 - **[1] 思维脑图**
 
-![introduction-crawler](./images/introduction-crawler.png)
+![introduction-crawler](./images/爬虫入门-1.png)
 
 - **[2] 核心要点**
-  - xxx
+
+<img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf" alt="pdf" width="4200" height="4200">
+
+<object data="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf" width="700px" height="700px">
+    <embed src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
 
 - **[3] 代码说明**
   - xxx
