@@ -16,7 +16,7 @@
 
 <p align=center>
   <a href="https://github.com/EscapeLife/DotFiles.git">
-    <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/crawler-advance-guide.png" >
+    <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB.png" >
   </a>
 </p>
 
@@ -64,11 +64,20 @@
 
 - **[1] 思维脑图**
 
-![introduction-crawler](./images/爬虫入门-1.png)
+<p align=center>
+  <a href="https://github.com/EscapeLife/DotFiles.git">
+    <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-1.png" >
+  </a>
+</p>
 
 - **[2] 核心要点**
 
-<img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf" alt="pdf" width="4200" height="4200">
+<p align=center>
+  <a href="https://github.com/EscapeLife/DotFiles.git">
+    <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2-1.png" >
+    <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2-2.png" >
+  </a>
+</p>
 
 <object data="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf" width="700px" height="700px">
     <embed src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf">
