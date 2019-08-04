@@ -68,7 +68,7 @@
 
 - **[2] 核心要点**
 
-<embed src="./images/爬虫入门-1.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="100%" height="600px" />
+<img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf" alt="pdf" width="4200" height="4200">
 
 - **[3] 代码说明**
   - xxx
