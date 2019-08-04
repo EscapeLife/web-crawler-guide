@@ -133,5 +133,5 @@ crashlytics-build.properties
 fabric.properties
 
 # Mac env
-.DS_Store/
+.DS_Store
 .python-version
