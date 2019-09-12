@@ -135,3 +135,4 @@ fabric.properties
 # Mac env
 .DS_Store
 .python-version
+.vscode
