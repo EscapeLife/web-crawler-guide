@@ -23,66 +23,16 @@
 
 ## 目录结构
 
-- [1. 环境配置](https://github.com/EscapeLife/web-crawler-guide#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
-- [2. 基础知识](https://github.com/EscapeLife/web-crawler-guide#2-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
-- [3. 爬虫入门](https://github.com/EscapeLife/web-crawler-guide#3-%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8)
-
-
-## 1. 环境配置
-
-- **[1] 思维脑图**
-
-【图】
-
-- **[2] 核心要点**
-  - xxx
-
-- **[3] 代码说明**
-  - xxx
-
-- **[4] 注意事项**
-  - xxx
-
-
-## 2. 基础知识
-
-- **[1] 思维脑图**
-
-[图]
-
-- **[2] 核心要点**
-  - xxx
-
-- **[3] 代码说明**
-  - xxx
-
-- **[4] 注意事项**
-  - xxx
-
-
-## 3. 爬虫入门
-
-- **[1] 思维脑图**
-
-<p align=center>
-  <a href="https://github.com/EscapeLife/DotFiles.git">
-    <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-1.png" >
-  </a>
-</p>
-
-- **[2] 核心要点**
-
-<object data="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf" width="700px" height="700px">
-    <embed src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
-
-- **[3] 代码说明**
-  - xxx
-
-- **[4] 注意事项**
-  - xxx
+- [0. 基础知识]()
+- [1. 爬虫介绍]()
+- [2. 数据爬取]()
+- [3. 下载缓存]()
+- [4. 并发下载]()
+- [5. 动态内容]()
+- [6. 表单交互]()
+- [7. 验证码处理]()
+- [8. Scrapy框架]()
+- [9. 综合应用]()
 
 
 ## 联系方式
