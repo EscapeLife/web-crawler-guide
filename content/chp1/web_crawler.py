@@ -7,7 +7,9 @@ from content.chp1.download import download, get_robots_parser
 
 
 def crawl_sitemap(url):
-    """1.网站地图爬虫
+    """
+    1.站点地图爬虫
+    http://example.python-scraping.com/view/11.网站地图爬虫
     http://example.python-scraping.com/sitemap.xml
     """
     sitemap = download(url)
@@ -17,7 +19,8 @@ def crawl_sitemap(url):
 
 
 def crawl_id(url, max_errors=5):
-    """2.ID遍历爬虫
+    """
+    2.ID遍历爬虫
     http://example.python-scraping.com/view/
     """
     num_error = 0
@@ -32,17 +35,19 @@ def crawl_id(url, max_errors=5):
             num_error = 0
 
 
-def crawl_link(start_url, link_regex, robots_url=None, user_agent='python/3.7.1',
+def crawl_link(start_url, link_regex, robots_url=None, user_agent=None,
                proxies=None, delay_time=5, max_depth=4):
-    """3.链接爬虫
+    """
+    3.链接爬虫
+    只需将max_depth设为一个负数即可当前深度永远不会与之相等
+    http://example.python-scraping.com/view/1
         > (1)解析robots.txt文件
         > (2)支持代理
         > (3)下载限速
         > (4)避免爬虫陷阱
-    http://example.python-scraping.com/view/1
     """
     crawl_queue = [start_url]
-    seen_links = {}
+    seen_links_dict = {}
     throttle = Throttle(delay_time)
     if not robots_url:
         robots_url = f'{start_url}/robots.txt'
@@ -51,7 +56,7 @@ def crawl_link(start_url, link_regex, robots_url=None, user_agent='python/3.7.1'
     while crawl_queue:
         url = crawl_queue.pop()
         if rp.can_fetch(user_agent, url):
-            depth = seen_links(url, 0)
+            depth = seen_links_dict(url, 0)
             if depth == max_depth:
                 print(f'Skipping {url} due to depth ...')
                 continue
@@ -62,8 +67,8 @@ def crawl_link(start_url, link_regex, robots_url=None, user_agent='python/3.7.1'
             for link in get_links(html):
                 if re.match(link_regex, link):
                     abs_link = urljoin(start_url, link)
-                    if abs_link not in seen_links:
-                        seen_links[abs_link] = depth + 1
+                    if abs_link not in seen_links_dict:
+                        seen_links_dict[abs_link] = depth + 1
                         crawl_queue.append(abs_link)
         else:
             print(f'Blocked by robots.txt {url} ...')
