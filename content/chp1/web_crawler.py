@@ -1,9 +1,9 @@
-import re
 import itertools
+import re
 from urllib.parse import urljoin
 
-from content.chp1.throttle import Throttle
 from content.chp1.download import download, get_robots_parser
+from content.chp1.throttle import Throttle
 
 
 def crawl_sitemap(url):
