@@ -18,7 +18,7 @@
 
 <object data="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf" width="700px" height="700px">
     <embed src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.svg">Download SVG</a>.</p>
+        <p>This browser does not support SVG. Please download the SVG to view it: <a href="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-2.svg">Download SVG</a>.</p>
     </embed>
 </object>
 
@@ -33,4 +33,4 @@
 
 ## 4. 注意事项
 
-- 写爬虫的时候，首先需要根据自己的目的以及收集到的信息来决定使用的技术和框架，其次就是由简及深的开始上手写爬虫，之后经过多次的重构基本可以比较方便且灵活的使用了，最后就是需要写文档以及代码注释，以备日后查阅和翻看。
+- 写爬虫的时候，首先需要根据自己的目的以及收集到的信息来决定使用的技术和框架，其次就是由简及深的开始上手写爬虫，经过多次重构基本可以比较方便且灵活的使用了，最后就是需要写文档以及代码注释，以备日后查阅和翻看。
