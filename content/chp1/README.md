@@ -6,6 +6,7 @@
   </a>
 </p>
 
+
 ## 1. 思维脑图
 
 <p align=center>
@@ -13,6 +14,7 @@
     <img src="https://github.com/EscapeLife/web-crawler-guide/blob/master/images/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8-1.png" >
   </a>
 </p>
+
 
 ## 2. 核心要点
 
@@ -22,6 +24,7 @@
     </embed>
 </object>
 
+
 ## 3. 代码说明
 
 - **1. [download.py](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp1/download.py)**
@@ -30,6 +33,7 @@
   - 包含相同域名的网页下载延迟设置
 - **3. [web_crawler.py](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp1/web_crawler.py)**
   - 包含网站地图爬虫、遍历ID爬虫、获取链接爬虫
+
 
 ## 4. 注意事项
 
