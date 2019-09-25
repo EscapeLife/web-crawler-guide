@@ -23,13 +23,13 @@
 **2.流行的BeautifulSoup模块**
 
 - **使用html5lib解析器:** `soup = BeautifulSoup(html, 'html5lib')`(效果好)
-- **使用html.parser解析器:** `soup = BeautifulSoup(html, 'html.parser')`
+- **使用html.parser解析器:** `soup = BeautifulSoup(html, 'html.parser')`(默认)
 - 我们知道即使页面中包含了不完整的HTML内容，使用BeautifulSoup模块也能帮助我们整理该页面，从而让我们可以从非常不完整的网站代码中抽取数据。
 
 **3.强大的lxml模块**
 
 - **使用XPath选择器:** `pip install lxml`(默认)
-- **使用cssselect选择器:** `pip install cssselect`
+- **使用cssselect选择器:** `pip install cssselect`(三方库)
 - Lxml是基于libxml2这一XML解析库构建的Python库，它使用C语言编写，解析速度比BeautifulSoup更快，不过安装过程也更为复杂。
 
 | 选择器描述 | XPath选择器 | CSS选择器 |
