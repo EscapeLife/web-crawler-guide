@@ -20,8 +20,9 @@
   </a>
 </p>
 
+## 1. 目录结构
 
-## 目录结构
+> **主要从以下几个章节进行讲解**
 
 - [0. 基础知识](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp0/README.md)
 - [1. 爬虫介绍](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp1/README.md)
@@ -34,8 +35,29 @@
 - [8. Scrapy框架](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp8/README.md)
 - [9. 综合应用](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp9/README.md)
 
+## 2. 常用三方库
 
-## 联系方式
+> **写爬虫项目的时候可与借鉴和参考的一些第三方库**
+
+- [faker - 用于生成假数据的库](https://github.com/joke2k/faker)
+- [fake-useragent - 伪装浏览器身份(代码量小可阅读源码)](https://github.com/hellysmile/fake-useragent)
+- [fuck-login - 模拟登录一些知名的网站](https://github.com/xchaoinfo/fuck-login)
+- [awesome-python-login-model - 模拟登陆一些大型网站](https://github.com/Kr1s77/awesome-python-login-model)
+- [proxy_pool - 通过网络爬虫抓取互联网上免费的代理IP地址自建代理IP池服务](https://github.com/jhao104/proxy_pool)
+- [weibospider - 分布式微博爬虫并支持快速抓取和稳定抓取两种运行模式](https://github.com/SpiderClub/weibospider)
+- [webster - 可以抓取网页中AJAX异步内容的分布式爬虫框架](https://github.com/zhuyingda/webster)
+- [PSpider - 简单易用的Python爬虫框架](https://github.com/xianhu/PSpider)
+- [HAipproxy - 使用Scrapy＋Redis实现的高可用分布式IP代理池](https://github.com/SpiderClub/haipproxy)
+- [awesome-spider - 收集各种爬虫项目](https://github.com/facert/awesome-spider)
+
+## 3. 实现目标
+
+> **光说不练，之后要用的时候还是不会的**
+
+- **爬取Boss直聘Python项目的工具招聘信息**
+- **开发基于WEB界面的爬虫项目(可以延续Boss直聘的爬虫)***
+
+## 4. 联系方式
 
 <p align="center">
     <img src="https://escapelife-1257414824.cos.ap-shanghai.myqcloud.com/escape-wechat-qrcode-1.gif" width="280" height="280" alt="WX" align="left" />
