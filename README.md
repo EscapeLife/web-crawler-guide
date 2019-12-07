@@ -33,7 +33,7 @@
 - [6. 表单交互](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp6/README.md)
 - [7. 验证码处理](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp7/README.md)
 - [8. Scrapy框架](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp8/README.md)
-- [9. 综合应用](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp9/README.md)
+- [9. 综合应用](https://github.com/EscapeLife/weWebCrawlerb-crawler-guide/blob/master/content/chp9/README.md)
 
 ## 2. 常用三方库
 
@@ -49,6 +49,7 @@
 - [PSpider - 简单易用的Python爬虫框架](https://github.com/xianhu/PSpider)
 - [HAipproxy - 使用Scrapy＋Redis实现的高可用分布式IP代理池](https://github.com/SpiderClub/haipproxy)
 - [awesome-spider - 收集各种爬虫项目](https://github.com/facert/awesome-spider)
+- [12306 - 12306网站智能刷票订票](https://github.com/testerSunshine/12306)
 
 ## 3. 实现目标
 
