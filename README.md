@@ -32,7 +32,7 @@
 - [5. 动态内容](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp5/README.md)
 - [6. 表单交互](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp6/README.md)
 - [7. 验证码处理](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp7/README.md)
-- [8. Scrapy框架](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp8/README.md)
+- [8. Scrapy 框架](https://github.com/EscapeLife/web-crawler-guide/blob/master/content/chp8/README.md)
 - [9. 综合应用](https://github.com/EscapeLife/weWebCrawlerb-crawler-guide/blob/master/content/chp9/README.md)
 
 ## 2. 常用三方库
@@ -43,21 +43,21 @@
 - [fake-useragent - 伪装浏览器身份(代码量小可阅读源码)](https://github.com/hellysmile/fake-useragent)
 - [fuck-login - 模拟登录一些知名的网站](https://github.com/xchaoinfo/fuck-login)
 - [awesome-python-login-model - 模拟登陆一些大型网站](https://github.com/Kr1s77/awesome-python-login-model)
-- [proxy_pool - 通过网络爬虫抓取互联网上免费的代理IP地址自建代理IP池服务](https://github.com/jhao104/proxy_pool)
+- [proxy_pool - 通过网络爬虫抓取互联网上免费的代理 IP 地址自建代理 IP 池服务](https://github.com/jhao104/proxy_pool)
 - [weibospider - 分布式微博爬虫并支持快速抓取和稳定抓取两种运行模式](https://github.com/SpiderClub/weibospider)
-- [webster - 可以抓取网页中AJAX异步内容的分布式爬虫框架](https://github.com/zhuyingda/webster)
-- [PSpider - 简单易用的Python爬虫框架](https://github.com/xianhu/PSpider)
-- [HAipproxy - 使用Scrapy＋Redis实现的高可用分布式IP代理池](https://github.com/SpiderClub/haipproxy)
+- [webster - 可以抓取网页中 AJAX 异步内容的分布式爬虫框架](https://github.com/zhuyingda/webster)
+- [PSpider - 简单易用的 Python 爬虫框架](https://github.com/xianhu/PSpider)
+- [HAipproxy - 使用 Scrapy ＋ Redis 实现的高可用分布式 IP 代理池](https://github.com/SpiderClub/haipproxy)
 - [awesome-spider - 收集各种爬虫项目](https://github.com/facert/awesome-spider)
-- [12306 - 12306网站智能刷票订票](https://github.com/testerSunshine/12306)
-- [python-spider - Python3网络爬虫实战](https://github.com/Jack-Cherish/python-spider)
+- [12306 - 12306 网站智能刷票订票](https://github.com/testerSunshine/12306)
+- [python-spider - Python3 网络爬虫实战](https://github.com/Jack-Cherish/python-spider)
 
 ## 3. 实现目标
 
 > **光说不练，之后要用的时候还是不会的**
 
-- **爬取Boss直聘Python项目的工具招聘信息**
-- **开发基于WEB界面的爬虫项目(可以延续Boss直聘的爬虫)**
+- **爬取 Boss 直聘 Python 项目的工具招聘信息**
+- **开发基于 WEB 界面的爬虫项目(可以延续 Boss 直聘的爬虫)**
 
 ## 4. 联系方式
 
